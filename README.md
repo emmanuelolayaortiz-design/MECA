@@ -13,7 +13,7 @@ El siguiente documento consolida la información técnica del código fuente y l
 El presente proyecto consiste en la construcción de un prototipo denominado MECA, un módulo de excavadora automatizada a escala que simula procesos de la industria de maquinaria pesada. Su desarrollo permite aplicar conocimientos de algoritmos y programación, promoviendo la optimización y el control de procesos, además de servir como base para futuros aprendizajes en circuitos y robótica.
 
 ## 🎓 Información Académica
-* **Integrantes / Autores:** Emmanuel Olaya Ortiz, Ximena Rivero Barón, María Natalia R.
+* **Integrantes / Autores:** Emmanuel Olaya Ortiz, Ximena Rivero Barón, María Natalia Ramirez, Manuela Martinez, Tomas Gutierrez Calderón, Juan Esteban Quirama.
 * **Docente Asesor:** Natalia Alcalde Mejia.
 * **Facultad:** Facultad de Ingenierías.
 * **Programa Académico:** Ingeniería Industrial.
@@ -30,7 +30,7 @@ El código en C++ (Framework Arduino) estructura el controlador del prototipo (d
 ### Configuración de Red (Punto de Acceso ESP32)
 El microcontrolador genera su propia red Wi-Fi para que el usuario pueda conectarse de forma local e interactuar con el servidor web.
 * **SSID (Nombre de red):** `MECA`
-* **Contraseña:** *(Abierta / Sin contraseña)*
+* **Contraseña:** *(No disponible)*
 * **Puerto del Servidor:** 80
 
 ### Asignación de Pines (Puente H L298N)
@@ -51,3 +51,23 @@ El ESP32 aloja una página web responsiva construida con **HTML**, **CSS** y **J
   * `A` o `a`: Giro a la izquierda (`/left`)
   * `D` o `d`: Giro a la derecha (`/right`)
 * **Parada Automática:** El sistema cuenta con un evento `keyup` en JavaScript que envía la instrucción de detenerse (`/stop`) en el instante exacto en el que el usuario suelta cualquier tecla, garantizando un manejo seguro y preciso de los actuadores.
+
+Configuración de Red (Cliente Wi-Fi)
+
+La cámara no emite su propia red, sino que se conecta como cliente a la red MECA generada por el controlador principal. Para asegurar que la interfaz web siempre la encuentre, se le asigna una configuración estática:
+
+IP Local Fija: 192.168.4.2
+
+Puerta de Enlace (Gateway): 192.168.4.1
+
+Máscara de Subred: 255.255.255.0
+
+Lógica de Procesamiento de Imagen
+
+El firmware de la cámara está optimizado para garantizar fluidez en la transmisión (Streaming):
+
+Gestión Inteligente de Memoria: El código verifica la existencia de memoria externa PSRAM. Si la encuentra, habilita múltiples búferes de video (aumentando la calidad y estabilidad). Si no hay PSRAM, limita el tamaño de los frames y usa la memoria DRAM interna.
+
+Ajuste de Sensor (FPS): Para maximizar la tasa de fotogramas por segundo, la cámara fuerza un tamaño de imagen a QVGA (320x240) bajo el formato de compresión de hardware JPEG.
+
+Servidor de Video: Una vez inicializada, la cámara levanta un servidor asíncrono que envía un flujo de video constante (MJPEG) hacia el puerto 81, el cual es embebido directamente a través de una etiqueta <img> en la interfaz HTML principal.
