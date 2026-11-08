@@ -52,6 +52,10 @@ El ESP32 aloja una página web responsiva construida con **HTML**, **CSS** y **J
   * `D` o `d`: Giro a la derecha (`/right`)
 * **Parada Automática:** El sistema cuenta con un evento `keyup` en JavaScript que envía la instrucción de detenerse (`/stop`) en el instante exacto en el que el usuario suelta cualquier tecla, garantizando un manejo seguro y preciso de los actuadores.
 
+### 📷 Módulo de Visión y Transmisión (ESP32-CAM)
+
+Para proporcionar retroalimentación visual en tiempo real sin saturar el procesador de movimiento, el sistema integra un módulo ESP32-CAM (modelo AI_THINKER) que opera de forma independiente.
+
 Configuración de Red (Cliente Wi-Fi)
 
 La cámara no emite su propia red, sino que se conecta como cliente a la red MECA generada por el controlador principal. Para asegurar que la interfaz web siempre la encuentre, se le asigna una configuración estática:
