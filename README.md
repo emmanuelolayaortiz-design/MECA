@@ -24,8 +24,8 @@ El presente proyecto consiste en la construcción de un prototipo denominado MEC
 
 ---
 
-## ⚙️ Especificaciones Técnicas del Sistema (Artemis)
-El código en C++ (Framework Arduino) estructura el controlador del prototipo (denominado "Artemis" en su interfaz) utilizando un microcontrolador ESP32 y un controlador de motores Puente H L298N.
+## ⚙️ Especificaciones Técnicas del Sistema (MECA)
+El código en C++ (Framework Arduino) estructura el controlador del prototipo (denominado "MECA") utilizando un microcontrolador ESP32 y un controlador de motores Puente H L298N.
 
 ### Configuración de Red (Punto de Acceso ESP32)
 El microcontrolador genera su propia red Wi-Fi para que el usuario pueda conectarse de forma local e interactuar con el servidor web.
