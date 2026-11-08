@@ -13,7 +13,7 @@ El siguiente documento consolida la información técnica del código fuente y l
 El presente proyecto consiste en la construcción de un prototipo denominado MECA, un módulo de excavadora automatizada a escala que simula procesos de la industria de maquinaria pesada. Su desarrollo permite aplicar conocimientos de algoritmos y programación, promoviendo la optimización y el control de procesos, además de servir como base para futuros aprendizajes en circuitos y robótica.
 
 ## 🎓 Información Académica
-* **Integrantes / Autores:** Emmanuel Olaya Ortiz, Ximena Rivero Barón, María Natalia Ramirez, Manuela Martinez, Tomas Gutierrez Calderón, Juan Esteban Quirama.
+* **Integrantes / Autores:** Emmanuel Olaya Ortiz, Ximena Rivero Barón, María Natalia Ramirez, Manuela Martinez, Tomas Gutierrez Calderón, Juan Esteban Quirama, Sebastian Franco Mesa.
 * **Docente Asesor:** Natalia Alcalde Mejia.
 * **Facultad:** Facultad de Ingenierías.
 * **Programa Académico:** Ingeniería Industrial.
